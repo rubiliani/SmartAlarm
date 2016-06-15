@@ -1,0 +1,60 @@
+<section class="mainPage">
+	<section id="mainHeader">
+		<h1 id="clock">{{timeNow | date:'HH:mm'}}</h1>
+	</section>
+	<nav id="navBar">
+		<a id="day1">s</a>
+		<a id="day2">m</a>
+		<a id="day3">t</a>
+		<a id="day4">w</a>
+		<a id="day5">t</a>
+		<a id="day6">f</a>
+		<a id="day7">s</a>
+	</nav>
+	<section id="wakeup">
+		<article id="mainAlarmTime">--:--</article>
+		<article id="mainSubtitle">WAKEUP TIME</article>
+	</section>
+	<form>
+		<ul id="alarmList">
+			<li class="settingsFormLi">
+				<section id="LocationSec" class="SectionSett">
+					<input type="text" placeholder="Destination" id="cityList" class="inputSec">
+				</section>
+				<div class="clear"></div>
+			</li>
+			<li class="settingsFormLi">
+				<section class="labelDes">
+					<label for="arriveInput2" >Arrive</label>
+				</section>
+				<section id="ArriveTime" class="SectionSett">
+					<input type="text" placeholder="00" id="arriveInput1" class="inputSec place">
+					<p class="place">:</p>
+					<input type="text" placeholder="00" id="arriveInput2" class="inputSec place">
+				</section>
+				<div class="clear"></div>
+			</li>
+			<li class="settingsFormLi">
+				<section class="labelDes">
+					<label for="sleepTime" >Sleep</label>
+				</section>
+				<section class="SectionSett">
+					<input type="number"  id="sleepTime" class="inputSec place" min="0" max="23">
+				</section>
+				<div class="clear"></div>
+			</li>
+			<li class="settingsFormLi">
+				<section class="SectionSett">
+					<input type="time" placeholder="Arrive" class="inputSec place">
+				</section>
+			</li>
+
+		</ul>
+	</form>
+
+	<section id="setFooter" data-role="footer" data-position="fixed">
+		<a href="#" id="footerSave">Save</a>
+	</section>
+			
+			
+			</section>

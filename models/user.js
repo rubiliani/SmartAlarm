@@ -12,9 +12,9 @@ var userSchema = new Schema({
 	},
 	userSleepers:[{type : Schema.Types.ObjectId , ref: 'users'}],
  	alarms:[{
-		day:{type : String },
-		timeToArrive:{type: String},
-		timeToWakeUp: {type: String},
+		day:{type : String , default:''},
+		timeToArrive:{type: String, default:''},
+		timeToWakeUp: {type: String, default:''},
 		activities:[{type : Schema.Types.ObjectId , ref: 'activities'}],
 		mode: { type : Boolean, default:false}
 	}],
@@ -46,9 +46,10 @@ userSchema.statics.update_user=function(user,callback){
 
 
 userSchema.statics.get_user=function(userid,callback){
+	console.log("in get user",userid)
 	var r = {msg:[],status:0};
 	var query = {
-		_id:userid
+		id:userid
 	};
 
 	this.model('users').findOne(query)
@@ -70,7 +71,5 @@ userSchema.statics.get_user=function(userid,callback){
 			return callback(r);
 		});
 }
-
-
 
 User = mongoose.model('users', userSchema);

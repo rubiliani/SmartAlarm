@@ -1,0 +1,21 @@
+<section class="mainPage" >
+	<section id="mainHeader">
+		<h1 id="clock" ng-click="disconnect()">{{timeNow | date:'HH:mm'}}</h1>
+	</section>
+	<nav id="navBar">
+		<a id="day1">s</a>
+		<a id="day2">m</a>
+		<a id="day3">t</a>
+		<a id="day4">w</a>
+		<a id="day5">t</a>
+		<a id="day6">f</a>
+		<a id="day7">s</a>
+	</nav>
+	<article id="mainDayText">{{todayAlarm.day}}</article>
+	
+	<section id="mainImage" data-role="content"></section>
+	<section class="footer" ng-click="setAlarmPage()">
+		<article id="mainAlarmTime">{{todayAlarm.timeToWakeUp}}</article>
+		<article id="mainSubtitle">time to wakeup</article>
+	</section>
+</section>

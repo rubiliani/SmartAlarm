@@ -1,6 +1,7 @@
+
 @font-face{
 	font-family: Gobold;
-	src: url(../fonts/GoboldRegular.ttf);
+	src: url(../fonts/Gobold.ttf);
 }
 
 @font-face{
@@ -8,166 +9,447 @@
 	src: url(../fonts/GoboldThin.ttf);
 }
 
-*
-{
+
+/*clear margins*/
+* {
 	margin: 0;
 	padding: 0;
 }
-.clear
-{
-	clear: both;
+
+.clear { 
+ 	clear: both; 
+} 
+
+/*links*/
+a{
+	text-decoration: none;
+	font-family:"Gobold";
+	color: #c4c3c5;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 15px;
+}
+
+#wrapper{
+		margin: 0px auto;
 }
 
 
+/************main page*************/
 
-#wrapper
-{
-	margin: 0px auto;
-	font-size: 1vh;
+#mainHead{
+	
+	border-bottom: #FFFFFF;
+	border-top: #FFFFFF;
 }
-
-#mainPage
-{
-	background-color: #282332;
+.mainPage{
+	
+	
+	height: 100%;
+	
 }
-
-#setAlarmPage
-{
-	background-color: #282332;
-}
-
-#mainHeader
-{
-	background-color: #282332;
+#mainFooter{
 	border: none;
-	margin-top: 2.6408%;
-	display: block;
+	
 }
 
-.mainContent
-{
-	background-color: #282332;
-	border: none;
-	background-image: url(../img/moon.png);
+#navBar {
 	display: block;
-	background-repeat: no-repeat;
-	background-position: center;
-	position: absolute;
-	top:50%;
-	left:50%;
-	/*background-size: 340px,340px;*/
-	height: 340px;
-	width: 340px;
-	margin-left: -170px;
-	margin-top: -170px;
-	padding: 0;
-	min-height: 340px;
-}
-
-#navBar
-{
-	display:block;
 	width: 100%;
 	text-align: center;
-	margin-top: 2.6408%;
-
+	padding-top: 15px;
 }
 
-#mainFooter
-{
-	border: none;
-	background-color: #282332; 
-}
-
-#mainTimeAlarm
-{
-	font-size: 4.063vh;
-	font-family: "Gobold";
-	margin-left: 30px;
-	color: #f2f2f2;
-}
-
-#mainSubtitle
-{
-	font-size: 4.063vh;
-	font-family: "Gobold";
-	margin-left: 30px;
-	margin-bottom: 2.6408%;
-	color: #f2f2f2;
-}
-
-
-/*
-.moon
-{
+#setNavBar{
 	display: block;
+	width: 100%;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 30px;
+}
+#setNavBar a{
+	color: #817f85;	
+	text-decoration: none
+	font-size: 18px;
+	font-weight: normal;
+	margin: 15px;
+	text-shadow: none;
+}
+
+#navBar a{
+	color: #817f85;	
+	text-decoration: none
+	font-size: 18px;
+	font-weight: normal;
+	margin: 15px;
+	text-shadow: none;
+}
+.navPressed{
+	color: #282332 !important;
+}
+
+
+.nav2Pressed{
+	color: #FFFFFF  !important;
+}
+
+
+#navBar a:hover{
+	color: #282332  !important;	
+}
+
+#navBar2 a:hover{
+	color:#ffffff;
+}
+
+#navBar2 {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+#navBar2 a{
+	color: #817f85;
+	text-decoration: none
+	font-size: 18px;
+	font-weight: bold;
+	margin: 15px;
+	text-shadow: none;
+}
+
+
+#mainDayText{
+	text-align: center;
+	font-family:"Gobold";
+	font-weight: normal;
+	font-size: 24px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+#clock{
+	text-align: center;
+	font-family:"Gobold";
+	font-weight: normal;
+	font-size: 14px;
+	padding-top: 15px;
+}
+
+#setClock{
+	text-align: center;
+	font-family:"Gobold";
+	font-weight: normal;
+	font-size: 14px;
+}
+
+#mainImage{
+	background-image: url(../img/sun.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 180px,180px;
+	height: 200px;
+	z-index:2;
+}
+#cloud{
+	background-image: url(../images/dayCloudStorm.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	position: relative;
-	background-size: 340px,340px;
-	height: 500px;
-
-	background-image: url(../img/moon.png);
+	z-index:1;
+	background-size: 140px,140px;
+	height: 200px;
+	margin-right: 100px;
+	padding-top: 130px;
 }
-*/
-#navBar a
-{
-	margin: 3.9062%;
-	color: #817f85;
-	font-family: "Gobold";
-	font-size: 1.563vh;
-	font-weight: bold;
-	text-decoration: none;
+#mainAlarmTime{
+	font-size: 30px;
+	font-family:"Gobold";
+	font-weight: normal;
+	margin-left: 10px;
+
 }
 
-#mainDayName
-{
-	text-align: center;
-	font-family: "Gobold";
-	font-size: 3.125vh;
-	margin-top: 85px;
+#mainSubtitle{
+	font-size: 30px;
+	font-family:"Gobold";
+	font-weight: normal;
+	margin-left: 10px;
 	margin-bottom: 10px;
-	color: #f2f2f2;
 }
 
-.weekLetter
-{
-	margin: 15px;
-	color: #817f85;
-	text-shadow:none;
+#timeHidden{
+	font-size: 30px;
+	font-family:"Gobold";
+	font-weight: normal;
+	margin-left: 10px;
 }
 
-.clock
-{
-	font-family: "Gobold";
-	font-size: 1.25vh;
-	color: #f1f1f1;
-	margin-top: 2.6408%;
+
+/************settings page*************/
+#settingsPage{
+	font-family:"Gobold";
 }
+
+/************alarm page*************/
+#setAlarmPage{
+	font-family:"Helvetica Neue";
+	background-color: #040404 !important;	
+
+}
+#mapsData{
+	
+	text-align: right !important;
+	float: right;
+	
+}
+
+#setFooter{
+	display: block;
+    margin:0 auto;
+    margin: 10px;
+    background-color: #fafafa;	
+	text-shadow: none;
+	font-size: 18px;
+}
+
+#alarmFooter{
+	border-width: 0px !important;
+}
+
+#alarmHeader{
+	border:none;
+	background-color: #fafafa;	
+	border-bottom: #FFFFFF;
+	margin:0;
+}
+
+.alarmHeaderTxt{
+	border:solid !important;
+	border-bottom-color: #282332 !important;
+	border-left-width: 0px !important;
+	border-right-width: 0px !important;
+	border-top-width: 0px !important;
+	border-bottom-width: 3px !important;
+	border-radius: 0px !important;
+}
+
+.alarmHeaderTxtBlack{
+	
+	border-bottom-color: #FAFAFA !important;
+}
+.alarmTime{
+	font-family:"Gobold";
+	font-weight:500;
+	font-size: 35px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.alarmPage{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+#locSec{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+ul{
+	box-shadow: none !important;
+	padding: 0px !important;
+}
+li{
+	background-color: #fafafa !important;	
+	border-bottom-color: #282332 !important;
+	border-left-width: 0px !important;
+	border-right-width: 0px !important;
+	border-top-width: 0px !important;
+	border-bottom-width: 1px !important;
+	border-radius: 0px !important;
+	text-shadow: none !important;
+	padding: 0px !important;
+	
+}
+
+.darkBackground{
+	background-color: #282332 !important;
+	color: #FFFFFF !important;
+}
+
+.underlineBorder{
+	border-bottom-color: #65626c !important;
+	border-left-width: 0px !important;
+	border-right-width: 0px !important;
+	border-top-width: 0px !important;
+	border-bottom-width: 1px !important;
+	border-radius: 0px !important;
+}
+
+.ui-input-text{
+	border-width: 0px !important;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0) !important;
+	background-color: transparent !important;	
+	text-align: right;
+}
+
+.dispInline, .dispInlineLabel{
+    display: inline-block;
+    border-bottom-width:0;
+}
+.dispInlineLabel{
+	margin-top: 17px;
+    min-width: 100px;
+    float: left;
+    text-shadow: none !important;
+
+    
+}
+.dispInline{
+     min-width: 150px;
+     max-width: 150px;
+     float: right;
+}
+
+.ui-btn{
+	background-color: transparent !important;
+	border-width: 0px !important;
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1) !important;
+}
+.searchInput{
+	text-shadow: none !important;
+	padding: 0px !important;
+	min-height: 0em !important;
+	width: 55% !important;
+	text-align: left !important;
+}
+
+.inputType{
+	text-align: right !important;
+}
+    
+.placeColor::-webkit-input-placeholder {
+    color:    #333;
+}
+.placeColor:-moz-placeholder {
+    color:    #333;
+}
+.placeColor::-moz-placeholder {
+    color:    #333;
+}
+.placeColor:-ms-input-placeholder {
+    color:    #333;
+}
+
+.placeColor2::-webkit-input-placeholder {
+    color:    #FFFFFF;
+}
+.placeColor2:-moz-placeholder {
+    color:    #FFFFFF;
+}
+.placeColor2::-moz-placeholder {
+    color:    #FFFFFF;
+}
+.placeColor2:-ms-input-placeholder {
+    color:    #FFFFFF;
+}
+
+.distanceData{
+	color: #999;
+	text-shadow: none !important;
+	overflow: hidden;
+	
+}
+
+#cityList{
+	float: left;
+}
+/************wake page*************/
 
 #wakeup
 {
-	border-bottom: 8px solid #ffffff;
+	border-bottom: 8px solid #000000;
 	margin: 0 4.6875% 0 4.6875%;
 }
 
-#wakeupTime
-{
-	font-size: 5.7218vh;
-	font-family: "Gobold";
-	margin-bottom: 0.8802%;
-	margin-top: 8.8028%;
-	/*margin-left: 30px;*/
-	color: #f2f2f2;
+
+.wake1Style{
+	background-color: #ffd500 !important;
+	text-shadow: none !important;
+	border-width: 0px;
+	font-family:"Gobold";
+}
+.wake1StyleContent{
+	color: #FFFFFF;
+	font-size: 55px;
+	padding-left: 30px;
+	padding-top: 25px;
+}
+.wake1StyleFooter{
+	font-size: 30px;
+	font-weight: normal;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	border-width: 0px;
+}
+.wake2Style{
+	background-color: #ffb000 !important;
+	text-shadow: none !important;
+	border-width: 0px;
+	font-family:"Gobold";
+}
+.wake3Style{
+	background-color: #ff6518 !important;
+	text-shadow: none !important;
+	border-width: 0px;
+	font-family:"Gobold";
 }
 
-#wakeupTimeText
-{
-	font-size: 5.7218vh;
-	font-family: "Gobold";
-	/*margin-left: 30px;*/
-	margin-bottom: 2.6408%;
-	color: #f2f2f2;
+#sleepPageHeader a{
+	color: #000000;
+}
+
+#wakePageHeader a{
+	color: #000000;
+}
+
+
+.sleep1Style{
+	background-color: #24c8a7 !important;
+	text-shadow: none !important;
+	border-width: 0px;
+	font-family:"Gobold";
+	
+}
+.sleep1StyleContent{
+	color: #FFFFFF;
+	font-size: 55px;
+	padding-left: 30px;
+	padding-top: 25px;
+}
+.sleep1StyleFooter{
+	font-size: 30px;
+	font-weight: normal;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	border-width: 0px;
+}
+.sleep2Style{
+	background-color: #2488c8 !important;
+	text-shadow: none !important;
+	border-width: 0px;
+	font-family:"Gobold";
+}
+.sleep3Style{
+	background-color: #2452c8 !important;
+	text-shadow: none !important;
+	border-width: 0px;
+	font-family:"Gobold";
+}
+
+.footer {
+  position: absolute;
+   bottom: 10px;
 }
 
 .settingsFormLi
@@ -209,15 +491,6 @@
 	
 }
 
-.ui-input-text
-{
-	border-width: 0px !important;
-	box-shadow: inset 0 1px 3px rgba(0,0,0,0) !important;
-	background-color: transparent !important;	
-	text-align: right !important;
-	color: #f2f2f2 !important;
-	width: 100%;
-}
 
 #ArriveTime input
 {
@@ -246,37 +519,5 @@ label
 	float: left;
 }
 
-#cityList
-{
 
-}
 
-.place
-{
-	text-align: right !important;
-	float: right;
-}
-
-#footerSave
-{
-	display: block;
-	margin: 0 auto;
-	background-color: #282332;
-	text-shadow:none;
-	font-size: 18px;
-	color: #f2f2f2;
-	border:none;
-
-}
-
-#setFooter a
-{
-	border-radius: 0px;
-	border-color: white;
-	box-shadow: none;
-}
-
-#setFooter
-{
-	border: none;
-}

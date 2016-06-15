@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 1411;
 app.set('port', port);
 
 app.locals.name = 'SmartAlarm';
@@ -48,13 +48,32 @@ http.listen(app.get('port'), function()
   console.log(new Date());
 });
 
+global.authenticating_user=function(req,res,next){
+    var r = {msg:[],status:0};
+    var uid = req.headers.uid;
+
+    if (typeof (uid) !== 'string'){
+        r.msg.push('headers not found',uid)
+        return res.status(404).json(r);
+    }
+    User.get_user(uid,function(result){
+        if (!result.status){
+            r.msg.push('user not found')
+            return res.status(404).json(r);
+        }
+        req.user = result.user;
+        console.log("auth complete")
+        next();
+    })
+}
 
 app.get('/', function(req,res,next){ });
 
 
 //users
-app.post('/users/get_user', controllers.user_controller.get_user); 
 app.post('/users/update_user', controllers.user_controller.update_user); 
+//app.post('/users/get_user', controllers.user_controller.get_user); 
+
 
 
 
