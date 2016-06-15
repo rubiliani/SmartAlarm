@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		
+		<script src="includes/scripts.js"></script>
+		<link rel="stylesheet" href="includes/style.css"> 
+ 		<title>Alarm</title> 
+	</head>
+
+	<body>
+		<div id="wrapper">
+						<!--Main Page-->
+			<section id="mainPage" data-role="page">
+				<section id="mainHeader" data-role="header">
+					<h1 class="clock">18:45</h1>
+				</section>
+				<nav id="navBar">
+					<a id="dya1">s</a>
+					<a id="dya2">m</a>
+					<a id="dya3">t</a>
+					<a id="dya4">w</a>
+					<a id="dya5">t</a>
+					<a id="dya6">f</a>
+					<a id="dya7">s</a>
+				</nav>
+				<article id="mainDayName">wednesday</article>
+
+				<section class="mainContent" data-role="content"></section>
+
+				<a href="#setAlarmPage">
+					<section id="mainFooter" data-role="footer" data-position="fixed">
+						<article id="mainTimeAlarm">02:46</article>
+						<article id="mainSubtitle">UNTIL BEDTIME</article>
+					</section>
+				</a>
+
+			</section>
+						<!--End of the Main Page-->
+
+						<!--Settings Page-->
+			<section id="setAlarmPage" data-role="page">
+				<section id="mainHeader" data-role="header">
+					<h1 class="clock">18:45</h1>
+				</section>
+				<nav id="navBar">
+					<a id="dya1">s</a>
+					<a id="dya2">m</a>
+					<a id="dya3">t</a>
+					<a id="dya4">w</a>
+					<a id="dya5">t</a>
+					<a id="dya6">f</a>
+					<a id="dya7">s</a>
+				</nav>
+				<section id="wakeup">
+						<article id="wakeupTime">--:--</article>
+						<article id="wakeupTimeText">WAKEUP TIME</article>
+					</section>
+
+					<form>
+						<ul id="alarmList">
+
+							<li class="settingsFormLi">
+								<section id="LocationSec" class="SectionSett">
+									<input type="text" placeholder="Destination" id="cityList" class="inputSec">
+									
+								</section>
+								<div class="clear"></div>
+							</li>
+
+							<li class="settingsFormLi">
+								<section class="labelDes">
+									<label for="arriveInput2" >Arrive</label>
+								</section>
+								<section id="ArriveTime" class="SectionSett">
+									<input type="text" placeholder="00" id="arriveInput1" class="inputSec place">
+									<p class="place">:</p>
+									<input type="text" placeholder="00" id="arriveInput2" class="inputSec place">
+								</section>
+								<div class="clear"></div>
+							</li>
+
+							<li class="settingsFormLi">
+								<section class="labelDes">
+									<label for="sleepTime" >Sleep</label>
+								</section>
+								<section class="SectionSett">
+									<input type="number"  id="sleepTime" class="inputSec place" min="0" max="23">
+								</section>
+								<div class="clear"></div>
+							</li>
+
+							<li class="settingsFormLi">
+								<section class="SectionSett">
+									<input type="time" placeholder="Arrive" class="inputSec place">
+								</section>
+							</li>
+
+						</ul>
+					</form>
+
+					<section id="setFooter" data-role="footer" data-position="fixed">
+						<a href="#" id="footerSave">Save</a>
+					</section>
+				</a>
+			
+			</section>
+
+			
+
+						<!--End of Settings Page-->
+
+
+
+
+		</div>
+	</body>
+</html>

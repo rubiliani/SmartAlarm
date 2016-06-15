@@ -14,5 +14,14 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rubiliani/SmartAlarm/issues"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "fs-extra": "^0.30.0",
+    "mongoose": "^4.5.0"
   }
 }

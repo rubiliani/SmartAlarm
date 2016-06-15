@@ -1,0 +1,282 @@
+@font-face{
+	font-family: Gobold;
+	src: url(../fonts/GoboldRegular.ttf);
+}
+
+@font-face{
+	font-family: GoboldThin;
+	src: url(../fonts/GoboldThin.ttf);
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+.clear
+{
+	clear: both;
+}
+
+
+
+#wrapper
+{
+	margin: 0px auto;
+	font-size: 1vh;
+}
+
+#mainPage
+{
+	background-color: #282332;
+}
+
+#setAlarmPage
+{
+	background-color: #282332;
+}
+
+#mainHeader
+{
+	background-color: #282332;
+	border: none;
+	margin-top: 2.6408%;
+	display: block;
+}
+
+.mainContent
+{
+	background-color: #282332;
+	border: none;
+	background-image: url(../img/moon.png);
+	display: block;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	top:50%;
+	left:50%;
+	/*background-size: 340px,340px;*/
+	height: 340px;
+	width: 340px;
+	margin-left: -170px;
+	margin-top: -170px;
+	padding: 0;
+	min-height: 340px;
+}
+
+#navBar
+{
+	display:block;
+	width: 100%;
+	text-align: center;
+	margin-top: 2.6408%;
+
+}
+
+#mainFooter
+{
+	border: none;
+	background-color: #282332; 
+}
+
+#mainTimeAlarm
+{
+	font-size: 4.063vh;
+	font-family: "Gobold";
+	margin-left: 30px;
+	color: #f2f2f2;
+}
+
+#mainSubtitle
+{
+	font-size: 4.063vh;
+	font-family: "Gobold";
+	margin-left: 30px;
+	margin-bottom: 2.6408%;
+	color: #f2f2f2;
+}
+
+
+/*
+.moon
+{
+	display: block;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	background-size: 340px,340px;
+	height: 500px;
+
+	background-image: url(../img/moon.png);
+}
+*/
+#navBar a
+{
+	margin: 3.9062%;
+	color: #817f85;
+	font-family: "Gobold";
+	font-size: 1.563vh;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#mainDayName
+{
+	text-align: center;
+	font-family: "Gobold";
+	font-size: 3.125vh;
+	margin-top: 85px;
+	margin-bottom: 10px;
+	color: #f2f2f2;
+}
+
+.weekLetter
+{
+	margin: 15px;
+	color: #817f85;
+	text-shadow:none;
+}
+
+.clock
+{
+	font-family: "Gobold";
+	font-size: 1.25vh;
+	color: #f1f1f1;
+	margin-top: 2.6408%;
+}
+
+#wakeup
+{
+	border-bottom: 8px solid #ffffff;
+	margin: 0 4.6875% 0 4.6875%;
+}
+
+#wakeupTime
+{
+	font-size: 5.7218vh;
+	font-family: "Gobold";
+	margin-bottom: 0.8802%;
+	margin-top: 8.8028%;
+	/*margin-left: 30px;*/
+	color: #f2f2f2;
+}
+
+#wakeupTimeText
+{
+	font-size: 5.7218vh;
+	font-family: "Gobold";
+	/*margin-left: 30px;*/
+	margin-bottom: 2.6408%;
+	color: #f2f2f2;
+}
+
+.settingsFormLi
+{
+	border-bottom: 2px solid #514d59;
+	list-style: none;
+}
+
+#alarmList
+{
+	margin: 0 4.6875% 0 4.6875%;
+}
+
+#LocationSec
+{
+	font-size: 10px;
+	color: #f2f2f2;
+	float: left;
+}
+
+#LocationSec input
+{
+	color: black;
+}
+
+.SectionSett
+{
+	font-size: 10px;
+	color: #f2f2f2;
+	float: right;
+}
+
+
+.inputSec
+{
+	padding: 0px !important;
+	font-size: 2.9049vh;
+	/*font-color: :#f2f2f2;*/
+	
+}
+
+.ui-input-text
+{
+	border-width: 0px !important;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0) !important;
+	background-color: transparent !important;	
+	text-align: right !important;
+	color: #f2f2f2 !important;
+	width: 100%;
+}
+
+#ArriveTime input
+{
+	width: 10%;
+}
+
+#ArriveTime p
+{
+	padding-top: 1.3vh;
+	font-size: 2.9049vh;
+}
+
+label
+{
+	padding-top: 2vh;
+	font-size: 2.9049vh !important;
+	color: #f2f2f2;
+}
+
+
+
+.labelDes
+{
+	
+	
+	float: left;
+}
+
+#cityList
+{
+
+}
+
+.place
+{
+	text-align: right !important;
+	float: right;
+}
+
+#footerSave
+{
+	display: block;
+	margin: 0 auto;
+	background-color: #282332;
+	text-shadow:none;
+	font-size: 18px;
+	color: #f2f2f2;
+	border:none;
+
+}
+
+#setFooter a
+{
+	border-radius: 0px;
+	border-color: white;
+	box-shadow: none;
+}
+
+#setFooter
+{
+	border: none;
+}
