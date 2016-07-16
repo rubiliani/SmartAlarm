@@ -207,9 +207,10 @@ a{
 	display: block;
     margin:0 auto;
     margin: 10px;
-    background-color: #fafafa;	
+    background-color: #FFFFFF;	
 	text-shadow: none;
 	font-size: 18px;
+	color: #000000;
 }
 
 #alarmFooter{
@@ -218,7 +219,7 @@ a{
 
 #alarmHeader{
 	border:none;
-	background-color: #fafafa;	
+	background-color: #FFFFFF;	
 	border-bottom: #FFFFFF;
 	margin:0;
 }
@@ -260,7 +261,7 @@ ul{
 	padding: 0px !important;
 }
 li{
-	background-color: #fafafa !important;	
+	background-color: #FFFFFF !important;	
 	border-bottom-color: #282332 !important;
 	border-left-width: 0px !important;
 	border-right-width: 0px !important;
@@ -268,8 +269,26 @@ li{
 	border-bottom-width: 1px !important;
 	border-radius: 0px !important;
 	text-shadow: none !important;
-	padding: 0px !important;
+	padding: 10px !important;
 	
+}
+
+input, select {
+    width:100%;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    background-color: #ffffff;
+}
+
+
+
+
+}
+}
+li {
+    padding-left:200px;
 }
 
 .darkBackground{
@@ -477,16 +496,18 @@ li{
 
 .SectionSett
 {
+	font-family: "Gobold";
+    font-weight: normal;
 	font-size: 10px;
-	color: #f2f2f2;
+	color: #ffffff;
 	float: right;
 }
-
 
 .inputSec
 {
 	padding: 0px !important;
 	font-size: 2.9049vh;
+	margin-top: 5px;
 	/*font-color: :#f2f2f2;*/
 	
 }
@@ -503,21 +524,40 @@ li{
 	font-size: 2.9049vh;
 }
 
+/*
 label
 {
 	padding-top: 2vh;
 	font-size: 2.9049vh !important;
 	color: #f2f2f2;
+}*/
+
+.rightSettings {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    margin-right: 10px;
 }
 
 
 
 .labelDes
 {
-	
-	
+	font-family: "Gobold";
+    font-weight: normal;
+	color: #000000 !important;
 	float: left;
+	font-size: 2.9049vh;
 }
+
+.center{
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding-top: 15px;
+}
+
+
 
 
 

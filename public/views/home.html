@@ -1,6 +1,8 @@
-<section class="mainPage" >
+<section class="mainPage" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
 	<section id="mainHeader">
 		<h1 id="clock" ng-click="disconnect()">{{timeNow | date:'HH:mm'}}</h1>
+		<div class="rightSettings" ng-click="settingsPage()"><img ng-src="img/morningcog.png"  height="25" width="25"> </div>
+
 	</section>
 	<nav id="navBar">
 		<a id="day1">s</a>
@@ -15,7 +17,6 @@
 	
 	<section id="mainImage" data-role="content"></section>
 	<section class="footer" ng-click="setAlarmPage()">
-		<article id="mainAlarmTime">{{todayAlarm.timeToWakeUp}}</article>
-		<article id="mainSubtitle">time to wakeup</article>
+		<article id="mainAlarmTime">{{user.name}} - {{todayAlarm.timeToWakeUp}}</article>
 	</section>
 </section>

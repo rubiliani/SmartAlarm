@@ -1,6 +1,8 @@
 <section class="mainPage">
 	<section id="mainHeader">
 		<h1 id="clock">{{timeNow | date:'HH:mm'}}</h1>
+        <div class="rightSettings" ng-click="close()"><img ng-src="img/morningx.png" height="20" width="20"> </div>
+
 	</section>
 	<nav id="navBar">
 		<a id="day1">s</a>
@@ -11,49 +13,104 @@
 		<a id="day6">f</a>
 		<a id="day7">s</a>
 	</nav>
+    <br>
 	<section id="wakeup">
-		<article id="mainAlarmTime">--:--</article>
+		<article id="mainAlarmTime">{{todayAlarm.timeToWakeUp}}</article>
 		<article id="mainSubtitle">WAKEUP TIME</article>
 	</section>
 	<form>
 		<ul id="alarmList">
 			<li class="settingsFormLi">
-				<section id="LocationSec" class="SectionSett">
-					<input type="text" placeholder="Destination" id="cityList" class="inputSec">
+				<section >
+					<input type="text" class="inputSec place labelDes" placeholder="Destination">
 				</section>
 				<div class="clear"></div>
 			</li>
-			<li class="settingsFormLi">
+            <li class="settingsFormLi">
 				<section class="labelDes">
 					<label for="arriveInput2" >Arrive</label>
+				</section>				
+						
+            	<section class="SectionSett">
+            		
+                	<select id="arrival" class="inputSec place">
+                 
+					  <option value="0">00:00</option>
+					  <option value="0">00:30</option>
+					  <option value="0">01:00</option>
+					  <option value="0">01:30</option>
+					  <option value="0">02:00</option>
+					  <option value="0">02:30</option>
+					  <option value="0">03:00</option>
+					  <option value="0">03:30</option>
+					  <option value="0">04:00</option>
+					  <option value="0">04:30</option>
+					  <option value="0">05:00</option>
+					  <option value="0">05:30</option>
+					  <option value="0">06:00</option>
+					  <option value="0">06:30</option>
+					  <option value="0">07:00</option>
+					  <option value="0">07:30</option>
+					  <option value="0">08:00</option>
+					  <option value="0">08:30</option>
+					  <option value="0">09:00</option>
+					  <option value="0">09:30</option>
+					  <option value="0">10:00</option>
+					  <option value="0">10:30</option>
+					  <option value="0">11:00</option>
+					  <option value="0">11:30</option>
+					  <option value="0">12:00</option>
+					  <option value="0">12:30</option>
+					  <option value="0">13:00</option>
+					  <option value="0">13:30</option>
+					  <option value="0">14:00</option>
+					  <option value="0">14:30</option>
+					  <option value="0">15:00</option>
+					  <option value="0">15:30</option>
+					  <option value="0">16:00</option>
+					  <option value="0">16:30</option>
+					  <option value="0">17:00</option>
+					  <option value="0">17:30</option>
+					  <option value="0">18:00</option>
+					  <option value="0">18:30</option>
+					  <option value="0">19:00</option>
+					  <option value="0">19:30</option>
+					  <option value="0">20:00</option>
+					  <option value="0">20:30</option>
+					  <option value="0">21:00</option>
+					  <option value="0">21:30</option>
+					  <option value="0">22:00</option>
+					  <option value="0">22:30</option>
+					  <option value="0">23:00</option>
+					  <option value="0">23:30</option>
+					</select>
 				</section>
-				<section id="ArriveTime" class="SectionSett">
-					<input type="text" placeholder="00" id="arriveInput1" class="inputSec place">
-					<p class="place">:</p>
-					<input type="text" placeholder="00" id="arriveInput2" class="inputSec place">
-				</section>
-				<div class="clear"></div>
-			</li>
-			<li class="settingsFormLi">
+                <div class="clear"></div>
+            </li>
+            <li class="settingsFormLi">
 				<section class="labelDes">
 					<label for="sleepTime" >Sleep</label>
 				</section>
 				<section class="SectionSett">
-					<input type="number"  id="sleepTime" class="inputSec place" min="0" max="23">
+					<input type="number"  id="sleepTime" placeholder="0" class="inputSec place" min="0" max="23">
 				</section>
 				<div class="clear"></div>
 			</li>
-			<li class="settingsFormLi">
-				<section class="SectionSett">
-					<input type="time" placeholder="Arrive" class="inputSec place">
+			 <li class="settingsFormLi">
+				<section class="labelDes">
+					<label for="sleepTime" >ActivityName</label>
 				</section>
+				<section class="SectionSett">
+					<input type="number"  id="sleepTime" placeholder="0" class="inputSec place" min="0" max="23">
+				</section>
+				<div class="clear"></div>
 			</li>
-
+			
 		</ul>
 	</form>
 
-	<section id="setFooter" data-role="footer" data-position="fixed">
-		<a href="#" id="footerSave">Save</a>
+	<section id="setFooter" class="footer center" data-position="fixed">
+		<div href="#" id="footerSave" class="center labelDes">Save</div>
 	</section>
 			
 			

@@ -11,9 +11,9 @@
 		<link rel="stylesheet" href="includes/style.css"> 
  		<title>Smart Alarm</title> 
 	</head>
-	<body ng-class="{'with-top-navbar':status  , 'loginBody':!status }">
+	<body >
 
-         <div ng-class="{'container':status  , 'container-content-middle':!status }" ng-view  autoscroll="true" > 
+         <div ng-view  autoscroll="true" > 
          
          </div>
 	<script type="text/javascript" src="js/angular/angular.min.js"></script>
@@ -21,6 +21,8 @@
     <script type="text/javascript" src="js/angular/angular-route.min.js"></script>
     <script type="text/javascript" src="js/angular/ngStorage.js"></script>
     <script type="text/javascript" src="js/angular/ngFacebook.js"></script>
+    <script type="text/javascript" src="js/angular/angular-touch.min.js"></script>
+
     <script src="js/angular/jquery.min.js"></script>
    
 
@@ -32,6 +34,7 @@
     <script type="text/javascript" src="js/controllers/login.js"></script>
     <script type="text/javascript" src="js/controllers/home.js"></script>
     <script type="text/javascript" src="js/controllers/alarm.js"></script>
+     <script type="text/javascript" src="js/controllers/settings.js"></script>
    
     <script type="text/javascript" src="js/config.js"></script>
     <script type="text/javascript" src="js/run.js"></script>

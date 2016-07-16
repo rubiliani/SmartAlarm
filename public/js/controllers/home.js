@@ -7,6 +7,13 @@ angular.module('SmartAlarm')
     $scope.timeToWakeup = new Date();
     $scope.timeNow = new Date();
 
+    $scope.swipeLeft = function(){
+
+    }
+
+     $scope.swipeRight = function(){
+      
+    }
     
     $interval(function(){
         $scope.timeNow = new Date();
@@ -77,5 +84,9 @@ angular.module('SmartAlarm')
     $scope.disconnect = function(){
       fbLogin.logout();
     }
+
+     $scope.settingsPage = function(){
+        $location.url( "/settings" );
+     }
 
   });
