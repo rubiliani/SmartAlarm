@@ -23,7 +23,8 @@
 			<li class="settingsFormLi">
 				<section >
 					<!--<input type="text" class="inputSec place labelDes" placeholder="Destination" ng-value="todayAlarm.location">-->
-					<input type="text" class="inputSec place labelDes" placeholder="Destination" ng-autocomplete ng-model="todayAlarm.location.name" options="options" details="todayAlarm.location.data">
+					<input type="text" class="inputSec place labelDes" placeholder="Destination" ng-autocomplete ng-model="todayAlarm.location.name" options="options" details="todayAlarm.location.data" >
+					{{duration}} {{distance}}
 				</section>
 				<div class="clear"></div>
 			</li>
@@ -34,7 +35,7 @@
 						
             	<section class="SectionSett">
             		
-                	<select id="arrival" class="inputSec place" ng-model="todayAlarm.timeToArrive">
+                	<select id="arrival" class="inputSec place" ng-model="todayAlarm.timeToArrive" ng-blur="calculateDistance()">
 					 	<option ng-repeat="time in times">{{time}}</option>
 					</select>
 				</section>
@@ -63,7 +64,8 @@
 	</form>
 
 	<section id="setFooter" class="footer center" data-position="fixed">
-		<div id="footerSave" class="center labelDes" ng-click="saveAlarm()">Save</div>
+		<div id="footerSave" class="center labelDes" ng-click="calculateAlarm()">Save</div>
+		
 	</section>
 			
 			
