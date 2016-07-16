@@ -5,13 +5,13 @@
 
 	</section>
 	<nav id="navBar">
-		<a id="day1">s</a>
-		<a id="day2">m</a>
-		<a id="day3">t</a>
-		<a id="day4">w</a>
-		<a id="day5">t</a>
-		<a id="day6">f</a>
-		<a id="day7">s</a>
+		<a id="day1" ng-click="selectDay(0)">s</a>
+		<a id="day2" ng-click="selectDay(1)">m</a>
+		<a id="day3" ng-click="selectDay(2)">t</a>
+		<a id="day4" ng-click="selectDay(3)">w</a>
+		<a id="day5" ng-click="selectDay(4)">t</a>
+		<a id="day6" ng-click="selectDay(5)">f</a>
+		<a id="day7" ng-click="selectDay(6)">s</a>
 	</nav>
     <br>
 	<section id="wakeup">
@@ -22,7 +22,8 @@
 		<ul id="alarmList">
 			<li class="settingsFormLi">
 				<section >
-					<input type="text" class="inputSec place labelDes" placeholder="Destination">
+					<!--<input type="text" class="inputSec place labelDes" placeholder="Destination" ng-value="todayAlarm.location">-->
+					<input type="text" class="inputSec place labelDes" placeholder="Destination" ng-autocomplete ng-model="todayAlarm.location.name" options="options" details="todayAlarm.location.data">
 				</section>
 				<div class="clear"></div>
 			</li>
@@ -33,66 +34,18 @@
 						
             	<section class="SectionSett">
             		
-                	<select id="arrival" class="inputSec place">
-                 
-					  <option value="0">00:00</option>
-					  <option value="0">00:30</option>
-					  <option value="0">01:00</option>
-					  <option value="0">01:30</option>
-					  <option value="0">02:00</option>
-					  <option value="0">02:30</option>
-					  <option value="0">03:00</option>
-					  <option value="0">03:30</option>
-					  <option value="0">04:00</option>
-					  <option value="0">04:30</option>
-					  <option value="0">05:00</option>
-					  <option value="0">05:30</option>
-					  <option value="0">06:00</option>
-					  <option value="0">06:30</option>
-					  <option value="0">07:00</option>
-					  <option value="0">07:30</option>
-					  <option value="0">08:00</option>
-					  <option value="0">08:30</option>
-					  <option value="0">09:00</option>
-					  <option value="0">09:30</option>
-					  <option value="0">10:00</option>
-					  <option value="0">10:30</option>
-					  <option value="0">11:00</option>
-					  <option value="0">11:30</option>
-					  <option value="0">12:00</option>
-					  <option value="0">12:30</option>
-					  <option value="0">13:00</option>
-					  <option value="0">13:30</option>
-					  <option value="0">14:00</option>
-					  <option value="0">14:30</option>
-					  <option value="0">15:00</option>
-					  <option value="0">15:30</option>
-					  <option value="0">16:00</option>
-					  <option value="0">16:30</option>
-					  <option value="0">17:00</option>
-					  <option value="0">17:30</option>
-					  <option value="0">18:00</option>
-					  <option value="0">18:30</option>
-					  <option value="0">19:00</option>
-					  <option value="0">19:30</option>
-					  <option value="0">20:00</option>
-					  <option value="0">20:30</option>
-					  <option value="0">21:00</option>
-					  <option value="0">21:30</option>
-					  <option value="0">22:00</option>
-					  <option value="0">22:30</option>
-					  <option value="0">23:00</option>
-					  <option value="0">23:30</option>
+                	<select id="arrival" class="inputSec place" ng-model="todayAlarm.timeToArrive">
+					 	<option ng-repeat="time in times">{{time}}</option>
 					</select>
 				</section>
                 <div class="clear"></div>
             </li>
             <li class="settingsFormLi">
 				<section class="labelDes">
-					<label for="sleepTime" >Sleep</label>
+					<label for="sleepTime" >Sleep Hours</label>
 				</section>
 				<section class="SectionSett">
-					<input type="number"  id="sleepTime" placeholder="0" class="inputSec place" min="0" max="23">
+					<input type="number"  id="sleepTime" placeholder="0" class="inputSec place" min="0" max="23" ng-value="todayAlarm.sleepHours">
 				</section>
 				<div class="clear"></div>
 			</li>
@@ -110,7 +63,7 @@
 	</form>
 
 	<section id="setFooter" class="footer center" data-position="fixed">
-		<div href="#" id="footerSave" class="center labelDes">Save</div>
+		<div id="footerSave" class="center labelDes" ng-click="saveAlarm()">Save</div>
 	</section>
 			
 			

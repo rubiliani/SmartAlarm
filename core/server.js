@@ -15,7 +15,9 @@ app.use(bodyParser.json({ limit: '50mb' }));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, uid");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, uid,Authorization, Key,appid");
+  res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
+ 
   next();
 });
 
@@ -71,7 +73,7 @@ app.get('/', function(req,res,next){ });
 
 
 //users
-app.post('/users/update_user', controllers.user_controller.update_user); 
+app.post('/users/update_user', controllers.user_controller.update_user);
 //app.post('/users/get_user', controllers.user_controller.get_user); 
 
 

@@ -12,23 +12,18 @@
 		<ul id="alarmList">
 			<li class="settingsFormLi">
 				<section >
-					<input type="text" class="inputSec place" placeholder="Destination">
+					<!--<input type="text" class="inputSec place labelDes" placeholder="Destination" ng-value="todayAlarm.location">-->
+					<input type="text" class="inputSec place labelDes" placeholder="Home Town" ng-autocomplete ng-model="user.hometown.name" options="options" details="user.hometown.data"/>
 				</section>
 				<div class="clear"></div>
 			</li>
-            <li class="settingsFormLi">
-                <section >
-                    <input type="text" class="inputSec place" placeholder="Destination">
-                </section>
-                <div class="clear"></div>
-            </li>
 
 		</ul>
 	</section>
 	
 	
 	<section id="setFooter" data-role="footer" data-position="fixed">
-		<a href="#" id="footerSave">Save</a>
+		<div id="footerSave" ng-click="saveSettings()">Save</div>
 	</section>
 			
 </section>

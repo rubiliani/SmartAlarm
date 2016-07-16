@@ -14,6 +14,13 @@ angular.module('SmartAlarm')
      $scope.swipeRight = function(){
       
     }
+
+    $scope.selectDay = function(day){
+        $scope.todayAlarm = $scope.user.alarms[day];
+        //DB_queries.getWeather($scope.user.alarms[day].location).then(function(data){
+        //    console.log(data)
+        //})
+    }
     
     $interval(function(){
         $scope.timeNow = new Date();
@@ -68,6 +75,7 @@ angular.module('SmartAlarm')
                $rootScope.user=user;
            })
       }
+
     	$scope.todayAlarm = $scope.user.alarms[$scope.timeToWakeup.getDay()];
       console.log($scope.todayAlarm);
       alarm_manager.calculateAlarm($scope.todayAlarm);

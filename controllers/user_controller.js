@@ -8,6 +8,7 @@ exports.update_user = function(req,res,next){
 	console.log("in update user")
 	var r = {msg:[],status:0};
 	var user = req.body.user;
+	console.log(user);
 
 	if (!user){
 		console.log("user not exist or user id not found",user)

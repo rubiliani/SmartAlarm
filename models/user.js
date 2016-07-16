@@ -10,13 +10,23 @@ var userSchema = new Schema({
 			url:{ type : String, default:''}
 		}
 	},
+	hometown :{
+		name:{ type : String, default:''},
+		data:{ type: Schema.Types.Mixed, default:{}}
+		
+	},
 	userSleepers:[{type : Schema.Types.ObjectId , ref: 'users'}],
  	alarms:[{
 		day:{type : String , default:''},
 		timeToArrive:{type: String, default:''},
 		timeToWakeUp: {type: String, default:''},
 		activities:[{type : Schema.Types.ObjectId , ref: 'activities'}],
-		mode: { type : Boolean, default:false}
+		mode: { type : Boolean, default:false},
+		sleepHours: { type : Number, default:6},
+		location:{
+		name:{ type : String, default:''},
+		data:{ type: Schema.Types.Mixed, default:{}}
+		}
 	}],
 	
 });

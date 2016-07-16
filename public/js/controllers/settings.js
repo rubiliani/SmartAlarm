@@ -6,8 +6,6 @@ angular.module('SmartAlarm')
     $scope.todayAlarm='';
     $scope.timeToWakeup = new Date();
     $scope.timeNow = new Date();
-
-    
    
     $scope.init = function () {
     	$scope.todayAlarm = $scope.user.alarms[$scope.timeToWakeup.getDay()];
@@ -16,6 +14,14 @@ angular.module('SmartAlarm')
 
     $scope.close = function(){
       $window.history.back();
+    }
+
+    $scope.saveSettings = function(){
+        DB_queries.updateUser($scope.user).then(function(user){
+               console.log('update user',user);
+               $rootScope.user=user;
+           })
+        
     }
 
     
