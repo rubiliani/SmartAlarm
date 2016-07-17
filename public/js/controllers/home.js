@@ -31,10 +31,10 @@ angular.module('SmartAlarm')
     $scope.isNight = function(){
       var currentHours = $scope.timeNow.getHours();
       if(currentHours>18 || currentHours<6){
-          return false;
+          return true;
           
       }
-      return true;
+      return false;
       }
     
 
