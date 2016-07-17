@@ -22,15 +22,15 @@ angular.module('SmartAlarm.services')
 
 	            	if(today.mode === 0){
 	            		today.mode = 1;
-	            		$location.url( "/wake1" );
+	            		$location.url( "/sleep1" );
 	            	}
 	            	else if(today.mode===1){
 	            		today.mode = 2;
-	            		$location.url( "/wake2" );
+	            		$location.url( "/sleep2" );
 	            	}
 	            	else if(today.mode===2){
 	            		today.mode = 3;
-	            		$location.url( "/wake3" );
+	            		$location.url( "/sleep3" );
 	            	}
             	}
             }
@@ -55,37 +55,6 @@ angular.module('SmartAlarm.services')
             	todayDate = parseTime(today.timeToWakeUp);
             	todayDate.setDate(todayDate.getDate()+1);
             }
-
-
-
-
-/*
-
-            if(today.mode===-1){
-            	today = user.alarms[time.getDay()+1];
-            	todayDate = parseTime(today.timeToWakeUp);
-            	todayDate.setDate(todayDate.getDate()+1);
-            }
-
-           
-
-            var diff = todayDate-currentTime;
-
-            if(diff<1500){
-
-            	if(today.mode === 0){
-            		today.mode = 1;
-            		$location.url( "/wake1" );
-            	}
-            	else if(today.mode===1){
-            		today.mode = 2;
-            		$location.url( "/wake2" );
-            	}
-            	else if(today.mode===2){
-            		today.mode = 3;
-            		$location.url( "/wake3" );
-            	}
-            }*/
             
             
             return deferred.promise;

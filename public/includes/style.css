@@ -583,6 +583,14 @@ label
 	float: left;
 	font-size: 2.9049vh;
 }
+.labelDes2
+{
+	font-family: "Gobold";
+    font-weight: normal;
+	
+	float: left;
+	font-size: 2.9049vh;
+}
 
 .center{
 	display: block;

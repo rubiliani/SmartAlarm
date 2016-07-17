@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('SmartAlarm')
-  .controller('settingsCtrl', function ($scope, $http, $rootScope,$interval,$route,$window, DB_queries, fbLogin) {
+  .controller('settingsCtrl', function ($scope, $http,$location, $rootScope,$interval,$route,$window, DB_queries, fbLogin) {
     console.log("settings controller",$scope.user)
     $scope.todayAlarm='';
     $scope.timeToWakeup = new Date();
@@ -21,6 +21,8 @@ angular.module('SmartAlarm')
         DB_queries.updateUser($scope.user).then(function(user){
                console.log('update user',user);
                $rootScope.user=user;
+
+               $location.url( "/" );
            })
         
     }

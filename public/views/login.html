@@ -1,14 +1,14 @@
-<div class="container-fluid container-fill-height">
-<div class="container-content-middle">
-  <div class="row">
-    <div  class="m-x-auto text-center app-login-form">
 
-      <div class="m-b-lg">
-        
-        <button  ng-click="facebookLogin()"> Login with Facebook </button>
 
-      </div>
-    </div> 
-  </div>
-</div>
-</div>
+
+<section class="mainPage" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()" ng-class="{night: isNight() }">
+	<section id="mainHeader">
+		<h1 id="clock" ng-click="disconnect()">{{timeNow | date:'HH:mm'}}</h1>
+	</section>
+	
+	<section  class="center labelDes" id="mainDayText">Smart Alarm</section>
+
+	<section id="mainImage" data-role="content"  ng-style="isNight() && {'background-image':'url(img/moon.png)'} || {'background-image':'url(img/sun.png)' }" ></section>
+	<div  class="center labelDes2" ng-click="facebookLogin()" ng-style="isNight() && {'color':'#ffffff !important' } || {'color':'#000000 !important'}">Login with Facebook </div>
+	
+</section>

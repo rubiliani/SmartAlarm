@@ -48,9 +48,7 @@ angular.module('SmartAlarm')
         alarm_manager.calculateAlarm($scope.user,$scope.timeNow);
     },1000);
 
-    $scope.changeTheme = function(){
-
-    }
+  
    
     $scope.init = function () {
       if(!$scope.user)
@@ -106,7 +104,7 @@ angular.module('SmartAlarm')
     	$scope.todayAlarm = $scope.user.alarms[$scope.timeToWakeup.getDay()];
       $rootScope.currentAlarm = $scope.todayAlarm;
       console.log($scope.todayAlarm);
-      alarm_manager.calculateAlarm($scope.user,$scope.timeNow);
+    
       
 
     }
