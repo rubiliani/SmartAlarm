@@ -17,9 +17,7 @@ angular.module('SmartAlarm.services')
 
             if((timetosleep - currentTime)>15000){
             	$rootScope.nightmode = true;
-
             	if((timetosleep - currentTime)<15000){
-
 	            	if(today.mode === 0){
 	            		today.mode = 1;
 	            		$location.url( "/sleep1" );
@@ -36,18 +34,20 @@ angular.module('SmartAlarm.services')
             }
             else if((todayDate - currentTime)>15000){
             	$rootScope.nightmode = false;
-            	if(today.mode === 0){
-            		today.mode = 1;
-            		$location.url( "/wake1" );
-            	}
-            	else if(today.mode===1){
-            		today.mode = 2;
-            		$location.url( "/wake2" );
-            	}
-            	else if(today.mode===2){
-            		today.mode = 3;
-            		$location.url( "/wake3" );
-            	}
+                if((timetosleep - currentTime)<15000){
+                	if(today.mode === 0){
+                		today.mode = 1;
+                		$location.url( "/wake1" );
+                	}
+                	else if(today.mode===1){
+                		today.mode = 2;
+                		$location.url( "/wake2" );
+                	}
+                	else if(today.mode===2){
+                		today.mode = 3;
+                		$location.url( "/wake3" );
+                	}
+                }
             }
             else {
             	$rootScope.currentAlarm = user.alarms[time.getDay()+1];
@@ -55,7 +55,6 @@ angular.module('SmartAlarm.services')
             	todayDate = parseTime(today.timeToWakeUp);
             	todayDate.setDate(todayDate.getDate()+1);
             }
-            
             
             return deferred.promise;
         }

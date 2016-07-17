@@ -127,6 +127,7 @@ angular.module('SmartAlarm')
 
     $scope.disconnect = function(){
       fbLogin.logout();
+       $location.url( "/login" );
     }
 
      $scope.settingsPage = function(){
