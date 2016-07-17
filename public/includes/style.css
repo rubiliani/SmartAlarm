@@ -53,6 +53,23 @@ a{
 	
 }
 
+.night{
+	background-color: #282332 !important;
+	color: #FFFFFF !important;
+}
+
+.night a{
+	text-decoration: none
+	font-size: 18px;
+	font-weight: bold;
+	margin: 15px;
+	text-shadow: none;
+}
+
+.night a:hover{
+	color: #282332  !important;	
+}
+
 #navBar {
 	display: block;
 	width: 100%;
@@ -463,6 +480,18 @@ li {
 	text-shadow: none !important;
 	border-width: 0px;
 	font-family:"Gobold";
+}
+.sleep2StyleContent{
+	color: #FFFFFF;
+	font-size: 75px;
+	padding-left: 30px;
+	padding-top: 25px;
+}
+.sleep3StyleContent{
+	color: #FFFFFF;
+	font-size: 80px;
+	padding-left: 30px;
+	padding-top: 25px;
 }
 .sleep3Style{
 	background-color: #2452c8 !important;

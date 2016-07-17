@@ -24,7 +24,7 @@ var userSchema = new Schema({
 		day:{type : String , default:''},
 		timeToArrive:{type: String, default:''},
 		timeToWakeUp: {type: String, default:''},
-		timeToSleep: {type: String, default:''},
+		timeToSleep: {type: Number, default:''},
 		activities:[{
 				name:{ type : String, default:''},
 				duration:{ type : Number, default:0}

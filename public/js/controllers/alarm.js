@@ -75,7 +75,7 @@ angular.module('SmartAlarm')
         tts.setHours(tts.getHours()-$scope.todayAlarm.sleepHours);
 
         $scope.todayAlarm.timeToWakeUp = ttwa.getHours()+":"+ttwa.getMinutes();
-        $scope.todayAlarm.timeToSleep = tts.getHours()+":"+tts.getMinutes();
+        $scope.todayAlarm.timeToSleep = ttwa - tts;// tts.getHours()+":"+tts.getMinutes();
            
        
     }

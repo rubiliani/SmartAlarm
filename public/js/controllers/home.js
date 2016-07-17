@@ -7,6 +7,13 @@ angular.module('SmartAlarm')
     $scope.timeToWakeup = new Date();
     $scope.timeNow = new Date();
 
+    $scope.nextAlarm='';
+  
+
+    $rootScope.currentAlarm = '';
+    $rootScope.nightmode = true;
+
+    
     $scope.swipeLeft = function(){
 
     }
@@ -14,23 +21,36 @@ angular.module('SmartAlarm')
      $scope.swipeRight = function(){
       
     }
+      
 
     $scope.isActive = function(day){
-      var active = (day === $scope.todayAlarm.dayIndex);
+      var active = ($scope.timeNow === $scope.todayAlarm.dayIndex);
       return active;
-
     }
 
-    $scope.selectDay = function(day,id){
+    $scope.isNight = function(){
+      var currentHours = $scope.timeNow.getHours();
+      if(currentHours>18 || currentHours<6){
+          return false;
+          
+      }
+      return true;
+      }
+    
+
+
+    $scope.selectDay = function(day){
         $scope.todayAlarm = $scope.user.alarms[day];
-        
     }
     
     $interval(function(){
         $scope.timeNow = new Date();
         alarm_manager.calculateAlarm($scope.user,$scope.timeNow);
-       
-    },10000);
+    },1000);
+
+    $scope.changeTheme = function(){
+
+    }
    
     $scope.init = function () {
       if(!$scope.user)
@@ -79,16 +99,24 @@ angular.module('SmartAlarm')
                console.log('update new user',user);
                $rootScope.user=user;
            })
+
+          alarm_manager.calculateAlarm($scope.user,$scope.timeNow);
       }
 
     	$scope.todayAlarm = $scope.user.alarms[$scope.timeToWakeup.getDay()];
+      $rootScope.currentAlarm = $scope.todayAlarm;
       console.log($scope.todayAlarm);
+      alarm_manager.calculateAlarm($scope.user,$scope.timeNow);
       
 
     }
 
     $scope.stopSnooze = function() {
       $scope.todayAlarm.mode = -1;
+       DB_queries.updateUser($scope.user).then(function(user){
+               console.log('update new user',user);
+               $rootScope.user=user;
+           })
       $location.url('/');
     }
 

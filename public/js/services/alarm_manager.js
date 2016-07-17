@@ -5,11 +5,37 @@ angular.module('SmartAlarm.services')
         
         var _calculateAlarm = function (user,time) {
             var deferred = $q.defer();
-            var today = user.alarms[time.getDay()];
+            var currentTime = new Date()
+            var today = $rootScope.currentAlarm;
+            var todayDate = parseTime(today.timeToWakeUp);
 
-            if(parseTime(today.timeToWakeUp)<new Date()){
-            	if(today.mode===-1)
-            		return;
+            if(currentTime.getDay()<today.dayIndex)
+            	todayDate.setDate(todayDate.getDate()+1);
+           
+            var timetosleep = new Date(todayDate - today.timeToSleep);
+            $rootScope.currentAlarm.tts = timetosleep;
+
+            if((timetosleep - currentTime)>15000){
+            	$rootScope.nightmode = true;
+
+            	if((timetosleep - currentTime)<15000){
+
+	            	if(today.mode === 0){
+	            		today.mode = 1;
+	            		$location.url( "/wake1" );
+	            	}
+	            	else if(today.mode===1){
+	            		today.mode = 2;
+	            		$location.url( "/wake2" );
+	            	}
+	            	else if(today.mode===2){
+	            		today.mode = 3;
+	            		$location.url( "/wake3" );
+	            	}
+            	}
+            }
+            else if((todayDate - currentTime)>15000){
+            	$rootScope.nightmode = false;
             	if(today.mode === 0){
             		today.mode = 1;
             		$location.url( "/wake1" );
@@ -23,6 +49,43 @@ angular.module('SmartAlarm.services')
             		$location.url( "/wake3" );
             	}
             }
+            else {
+            	$rootScope.currentAlarm = user.alarms[time.getDay()+1];
+            	todayDate = $rootScope.currentAlarm;
+            	todayDate = parseTime(today.timeToWakeUp);
+            	todayDate.setDate(todayDate.getDate()+1);
+            }
+
+
+
+
+/*
+
+            if(today.mode===-1){
+            	today = user.alarms[time.getDay()+1];
+            	todayDate = parseTime(today.timeToWakeUp);
+            	todayDate.setDate(todayDate.getDate()+1);
+            }
+
+           
+
+            var diff = todayDate-currentTime;
+
+            if(diff<1500){
+
+            	if(today.mode === 0){
+            		today.mode = 1;
+            		$location.url( "/wake1" );
+            	}
+            	else if(today.mode===1){
+            		today.mode = 2;
+            		$location.url( "/wake2" );
+            	}
+            	else if(today.mode===2){
+            		today.mode = 3;
+            		$location.url( "/wake3" );
+            	}
+            }*/
             
             
             return deferred.promise;

@@ -1,7 +1,7 @@
-<section class="mainPage" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
+<section class="mainPage" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()" ng-class="{night: isNight() }">
 	<section id="mainHeader">
 		<h1 id="clock" ng-click="disconnect()">{{timeNow | date:'HH:mm'}}</h1>
-		<div class="rightSettings" ng-click="settingsPage()"><img ng-src="img/morningcog.png"  height="25" width="25"> </div>
+		<div class="rightSettings" ng-click="settingsPage()"><img ng-src="{{isNight() && 'img/settings.png' || 'img/morningcog.png'}}" height="25" width="25"> </div>
 
 	</section>
 	<nav id="navBar">
@@ -15,8 +15,12 @@
 	</nav>
 	<article id="mainDayText">{{todayAlarm.day}}</article>
 	
-	<section id="mainImage" data-role="content"></section>
+
+	<section id="mainImage" data-role="content"  ng-style="isNight() && {'background-image':'url(img/moon.png)'} || {'background-image':'url(img/sun.png)' }" ></section>
 	<section class="footer" ng-click="setAlarmPage()">
-		<article id="mainAlarmTime">{{user.name}} - {{todayAlarm.timeToWakeUp}}</article>
+		<article id="mainAlarmTime"  ng-hide="nightmode">{{currentAlarm.timeToWakeUp}}</article>
+		<article id="mainAlarmTime" ng-show="nightmode">{{currentAlarm.tts | date:'HH:mm'}}</article>
+		<article id="mainSubtitle" ng-show="nightmode">time to sleep</article>
+		<article id="mainSubtitle" ng-hide="nightmode">time to wakeup</article>
 	</section>
 </section>
