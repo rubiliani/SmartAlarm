@@ -17,7 +17,31 @@
 				</section>
 				<div class="clear"></div>
 			</li>
+			 
 
+			<li class="settingsFormLi" ng-repeat="act in user.activities">
+				<section class="labelDes">
+					<input type="text" ng-model="act.name" placeholder="Write your activity" class="inputSec place labelDes">
+				</section>
+				<section class="SectionSett">
+					<input type="number" ng-model="act.duration" placeholder="0" class="inputSec place" min="0" max="23">
+				</section>
+				
+				<div class="clear"></div>
+			</li>
+			<li class="settingsFormLi">
+				<section class="labelDes">
+					<input type="text" ng-model="activityText" placeholder="Write your activity" class="inputSec place labelDes">
+				</section>
+				<section class="SectionSett">
+					<button class="inputSec place" ng-click="addActivity(activityText,activityDuration)">Add</button>
+				</section>
+				<section class="SectionSett">
+					<input type="number" ng-model="activityDuration"  placeholder="0" class="inputSec place" min="0" max="23">
+				</section>
+				
+				<div class="clear"></div>
+			</li>
 		</ul>
 	</section>
 	

@@ -5,13 +5,13 @@
 
 	</section>
 	<nav id="navBar">
-		<a id="day1" ng-click="selectDay(0)">s</a>
-		<a id="day2" ng-click="selectDay(1)">m</a>
-		<a id="day3" ng-click="selectDay(2)">t</a>
-		<a id="day4" ng-click="selectDay(3)">w</a>
-		<a id="day5" ng-click="selectDay(4)">t</a>
-		<a id="day6" ng-click="selectDay(5)">f</a>
-		<a id="day7" ng-click="selectDay(6)">s</a>
+		<a id="day1" ng-click="selectDay(0)" ng-class="{ navPressed: isActive(0) }">s</a>
+		<a id="day2" ng-click="selectDay(1)" ng-class="{ navPressed: isActive(1) }">m</a>
+		<a id="day3" ng-click="selectDay(2)" ng-class="{ navPressed: isActive(2) }">t</a>
+		<a id="day4" ng-click="selectDay(3)" ng-class="{ navPressed: isActive(3) }">w</a>
+		<a id="day5" ng-click="selectDay(4)" ng-class="{ navPressed: isActive(4) }">t</a>
+		<a id="day6" ng-click="selectDay(5)" ng-class="{ navPressed: isActive(5) }">f</a>
+		<a id="day7" ng-click="selectDay(6)" ng-class="{ navPressed: isActive(6) }">s</a>
 	</nav>
     <br>
 	<section id="wakeup">
@@ -24,7 +24,7 @@
 				<section >
 					<!--<input type="text" class="inputSec place labelDes" placeholder="Destination" ng-value="todayAlarm.location">-->
 					<input type="text" class="inputSec place labelDes" placeholder="Destination" ng-autocomplete ng-model="todayAlarm.location.name" options="options" details="todayAlarm.location.data" >
-					{{duration}} {{distance}}
+					<section class="labelDes">{{duration}} {{distance}}</section>
 				</section>
 				<div class="clear"></div>
 			</li>
@@ -34,8 +34,7 @@
 				</section>				
 						
             	<section class="SectionSett">
-            		
-                	<select id="arrival" class="inputSec place" ng-model="todayAlarm.timeToArrive" ng-blur="calculateDistance()">
+                	<select id="arrival" class="inputSec place" ng-model="todayAlarm.timeToArrive" ng-focus="calculateDistance();calculateAlarm()">
 					 	<option ng-repeat="time in times">{{time}}</option>
 					</select>
 				</section>
@@ -46,25 +45,51 @@
 					<label for="sleepTime" >Sleep Hours</label>
 				</section>
 				<section class="SectionSett">
-					<input type="number"  id="sleepTime" placeholder="0" class="inputSec place" min="0" max="23" ng-value="todayAlarm.sleepHours">
-				</section>
-				<div class="clear"></div>
-			</li>
-			 <li class="settingsFormLi">
-				<section class="labelDes">
-					<label for="sleepTime" >ActivityName</label>
+				<label class="labelDes inputSec place" for="sleepTime">h</label>
 				</section>
 				<section class="SectionSett">
-					<input type="number"  id="sleepTime" placeholder="0" class="inputSec place" min="0" max="23">
+					<input type="number"  id="sleepTime" placeholder="0" class="inputSec place" min="0" max="23" ng-model="todayAlarm.sleepHours" ng-blur="calculateAlarm()">
+					
 				</section>
+
 				<div class="clear"></div>
 			</li>
+			<li class="settingsFormLi" ng-repeat="activ in todayAlarm.activities">
+				<section class="labelDes">
+					<input type="text" ng-model="activ.name" placeholder="Write your activity" class="inputSec place labelDes">
+				</section>
+				<section class="SectionSett">
+				<label class="labelDes inputSec place" for="sleepTime">M</label>
+				</section>
+				<section class="SectionSett">
+					<input type="number" ng-model="activ.duration" placeholder="0" class="inputSec place" min="0" max="23" ng-blur="calculateAlarm()">
+				</section>
+				
+				<div class="clear"></div>
+			</li>
+
+			<li class="settingsFormLi">
+				<section>
+					<select class="inputSec place labelDes"
+					 ng-options="option.name for option in user.activities"
+					 ng-model="user.selectedOption">
+					      	<option style="display:none" value="">select activity</option>
+					 </select>
+				</section>
+				<section class="SectionSett">
+					<button class="inputSec place" ng-click="addActivity(user.selectedOption);user.selectedOption='0';calculateAlarm()" >Add</button>
+				</section>
+				
+				
+				<div class="clear"></div>
+			</li>
+
 			
 		</ul>
 	</form>
 
 	<section id="setFooter" class="footer center" data-position="fixed">
-		<div id="footerSave" class="center labelDes" ng-click="calculateAlarm()">Save</div>
+		<div id="footerSave" class="center labelDes" ng-click="saveAlarm()">Save</div>
 		
 	</section>
 			

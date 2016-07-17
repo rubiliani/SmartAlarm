@@ -66,6 +66,27 @@ angular.module('SmartAlarm')
                 loggedin : checkLoggedin
             }
         })
+        .when('/wake1',{
+            templateUrl: 'views/wake1.html',
+            controller: 'homeCtrl',
+            resolve:{
+                loggedin : checkLoggedin
+            }
+        })
+        .when('/wake2',{
+            templateUrl: 'views/wake2.html',
+            controller: 'homeCtrl',
+            resolve:{
+                loggedin : checkLoggedin
+            }
+        })
+        .when('/wake3',{
+            templateUrl: 'views/wake3.html',
+            controller: 'homeCtrl',
+            resolve:{
+                loggedin : checkLoggedin
+            }
+        })
         .when('/login', {
             templateUrl: 'views/login.html',
             controller: 'loginCtrl',

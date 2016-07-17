@@ -88,6 +88,10 @@ a{
 	color: #282332 !important;
 }
 
+html, body, .ng-scope {
+  height: 100%;
+}
+
 
 .nav2Pressed{
 	color: #FFFFFF  !important;
@@ -274,7 +278,8 @@ li{
 }
 
 input, select {
-    width:100%;
+	font-family:"Gobold";
+   
     border-right-width: 0px;
     border-left-width: 0px;
     border-top-width: 0px;
@@ -400,7 +405,7 @@ li {
 }
 .wake1StyleContent{
 	color: #FFFFFF;
-	font-size: 55px;
+	font-size: 90px;
 	padding-left: 30px;
 	padding-top: 25px;
 }

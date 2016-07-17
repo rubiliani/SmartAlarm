@@ -7,6 +7,7 @@ angular.module('SmartAlarm')
     $scope.timeToWakeup = new Date();
     $scope.timeNow = new Date();
    
+   
     $scope.init = function () {
     	$scope.todayAlarm = $scope.user.alarms[$scope.timeToWakeup.getDay()];
       console.log($scope.todayAlarm)
@@ -22,6 +23,12 @@ angular.module('SmartAlarm')
                $rootScope.user=user;
            })
         
+    }
+    $scope.addActivity = function(title,duration){
+        var act={"name":title,"duration":duration};
+        $scope.user.activities.push(act);
+        $scope.activityText = "";
+        $scope.activityDuration=0;
     }
 
     

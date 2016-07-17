@@ -15,15 +15,20 @@ angular.module('SmartAlarm')
       
     }
 
-    $scope.selectDay = function(day){
+    $scope.isActive = function(day){
+      var active = (day === $scope.todayAlarm.dayIndex);
+      return active;
+
+    }
+
+    $scope.selectDay = function(day,id){
         $scope.todayAlarm = $scope.user.alarms[day];
-        //DB_queries.getWeather($scope.user.alarms[day].location).then(function(data){
-        //    console.log(data)
-        //})
+        
     }
     
     $interval(function(){
         $scope.timeNow = new Date();
+        alarm_manager.calculateAlarm($scope.user,$scope.timeNow);
        
     },10000);
    
@@ -31,7 +36,7 @@ angular.module('SmartAlarm')
       if(!$scope.user)
         return;
       if($scope.user.alarms.length==0){
-        //
+        //init
         $scope.user.alarms = [
             {
                   "day": "Sunday",
@@ -78,8 +83,13 @@ angular.module('SmartAlarm')
 
     	$scope.todayAlarm = $scope.user.alarms[$scope.timeToWakeup.getDay()];
       console.log($scope.todayAlarm);
-      alarm_manager.calculateAlarm($scope.todayAlarm);
+      
 
+    }
+
+    $scope.stopSnooze = function() {
+      $scope.todayAlarm.mode = -1;
+      $location.url('/');
     }
 
     

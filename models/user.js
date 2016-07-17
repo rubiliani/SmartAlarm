@@ -15,13 +15,21 @@ var userSchema = new Schema({
 		data:{ type: Schema.Types.Mixed, default:{}}
 		
 	},
+	activities:[{name:{ type : String, default:''},
+				duration:{ type : Number, default:0} }],
+	defSleepHours: { type : Number, default:6},
 	userSleepers:[{type : Schema.Types.ObjectId , ref: 'users'}],
  	alarms:[{
+ 		dayIndex:{type : Number , default:''},
 		day:{type : String , default:''},
 		timeToArrive:{type: String, default:''},
 		timeToWakeUp: {type: String, default:''},
-		activities:[{type : Schema.Types.ObjectId , ref: 'activities'}],
-		mode: { type : Boolean, default:false},
+		timeToSleep: {type: String, default:''},
+		activities:[{
+				name:{ type : String, default:''},
+				duration:{ type : Number, default:0}
+		}],
+		mode: { type : Number, default:0},
 		sleepHours: { type : Number, default:6},
 		location:{
 		name:{ type : String, default:''},
@@ -40,6 +48,7 @@ userSchema.statics.update_user=function(user,callback){
 		upsert:true,
 		new: true
 	}
+
 	this.model('users').findOneAndUpdate(query,{$set:user},options)
 		.exec(function(err,result){
 			if (err){
